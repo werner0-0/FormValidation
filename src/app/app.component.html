@@ -1,0 +1,75 @@
+<div class="form-container">
+  <h2>Registration Form</h2>
+  
+  <form [formGroup]="register">
+    
+    <div class="form-group">
+      <label style="font-size: 20px;">First Name</label>
+      <pre></pre>
+      <input type="text" id="inputFirstname" class="form-control"
+      style="padding: 10px;" formControlName = "firstname">
+      <span *ngIf="firstname?.invalid && firstname?.touched" 
+            style="color: red;"
+            id="errorFirstName"> Invalid first name</span>
+      <pre></pre>
+    </div>
+
+    <div class="form-group">
+      <label style="font-size: 20px;" id="gender">Gender</label>
+      <pre></pre>
+      
+      <input type="checkbox" class="form-control"
+      style="padding: 10px;"  required>
+      <label style="font-size: 20px;">Male</label>
+      
+  
+      &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control"
+      style="padding: 10px;" required>
+      <label style="font-size: 20px;">Female</label>
+      
+
+      &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control"
+      style="padding: 10px;" required>
+      <label style="font-size: 20px;">Other</label>
+      
+      <pre></pre>
+    </div>
+
+    <div class="form-group">
+      <label style="font-size: 20px;">Country of Origin</label>
+      <pre></pre>
+      <input type="text" id="country" class="form-control"
+      style="padding: 10px;" formControlName = "country">
+      <span *ngIf="country?.invalid && country?.touched" 
+            style="color: red;"
+            id="errorCountry"> Enter country of origin</span>
+      <pre></pre>
+    </div>
+    
+    <div class="form-group">
+      <label style="font-size: 20px;">City of Origin</label>
+      <pre></pre>
+      <input type="text" id="city" class="form-control"
+      style="padding: 10px;" formControlName = "city">
+      <span *ngIf="city?.invalid && city?.touched" 
+            style="color: red;"
+            id="errorCity"> Enter city of origin</span>
+      <pre></pre>
+    </div>
+
+    <div class="form-group">
+      <label style="font-size: 20px;">Age</label>
+      <pre></pre>
+      <input type="number" id="inputAge" class="form-control"
+      style="padding: 10px;" formControlName = "age">
+      <span *ngIf="age?.invalid && age?.touched" 
+            style="color: red;"
+            id="errorAge"> Enter age</span>
+      <pre></pre>
+    </div>
+
+    <button id="submit" style="font-size: 20px;" [disabled]="register.invalid">
+      Submit
+    </button>
+  </form>
+</div>
